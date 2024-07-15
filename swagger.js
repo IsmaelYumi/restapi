@@ -4,7 +4,7 @@ const swaggerAutogen = require('swagger-autogen')()
      "title": 'REST API',
      "description": 'REST API with Express and Firestore'
    },
-   "host": 'localhost:5500',
+   "host": 'restapi-jja7.onrender.com',
    "basePath": "/api",
  };
  const outputFile = './swagger_output.json'
