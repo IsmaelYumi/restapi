@@ -79,6 +79,25 @@ exports.getItem = async (req, res) => {
   }
 };
 exports.updateItem = async (req, res) => {
+  /* 
+     #swagger.tags = ['Items']
+     #swagger.description = 'Update item'
+     #swagger.summary = 'Update Item'
+     #swagger.parameters['id'] = {
+         in: 'body',
+         description: 'data to update item',
+         required: true,
+     }
+     #swagger.responses[404] = {
+         description: 'Item not found',
+     }
+     #swagger.responses[400] = {
+         description: 'Bad request',
+     }
+     #swagger.responses[200] = {
+         description: 'update Item',
+     }
+   */
   try {
     const itemId = req.params.id;
     const data = req.body;
@@ -90,6 +109,25 @@ exports.updateItem = async (req, res) => {
   }
 };
 exports.deleteItem = async (req, res) => {
+  /* 
+     #swagger.tags = ['Items']
+     #swagger.description = 'Delete item'
+     #swagger.summary = 'Update Item'
+     #swagger.parameters['id'] = {
+         description: 'data to update item',
+         required: true,
+     }
+     #swagger.responses[404] = {
+         description: 'Item not found',
+     }
+     #swagger.responses[400] = {
+         description: 'Bad request',
+     }
+     #swagger.responses[200] = {
+         description: 'Item Delete',
+     }
+   */
+  
   try {
     const itemId = req.params.id;
     await db.collection("items").doc(itemId).delete();

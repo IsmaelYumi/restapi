@@ -8,7 +8,7 @@
   "host": "restapi-jja7.onrender.com",
   "basePath": "/api",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/items": {
@@ -57,40 +57,59 @@
     },
     "/items/{id}": {
       "put": {
-        "description": "",
+        "tags": [
+          "Items"
+        ],
+        "summary": "Update Item",
+        "description": "Update item",
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "description": "data to update item",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "update Item"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Item not found"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Items"
+        ],
+        "summary": "Update Item",
+        "description": "Delete item",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "data to update item"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Item Delete"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Item not found"
           }
         }
       }
